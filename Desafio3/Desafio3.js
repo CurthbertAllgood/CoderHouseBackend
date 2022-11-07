@@ -1,15 +1,20 @@
 const Contenedor=require("./Contenedor")
 const express=require("express")
+const productosTxt=require("./productos.txt")
+const { response } = require("express")
 const app= express()
 const server = app.listen(8080, ()=> console.log("server up"))
 
 const contenedor= new Contenedor();
 app.get('/productos', (request, response)=>{
-    resp=(contenedor.getAll().then(result=>console.log(result)))
-    response.send(resp)
+    contenedor.getAll().then(resolve=>response.send(resolve))
 
 })
 
-app.get('/alumnos',(request, response)=>{
+
+
+app.get('/productosRandom',(request, response)=>{
+    contenedor.getById(/*funcion random*/2).then(resolve=>response.send(resolve))
+    
 })
 
