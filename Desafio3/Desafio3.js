@@ -3,6 +3,7 @@ const fs=require('fs')
 const express=require("express")
 const productosTxt=require("./productos.txt")
 const { response, json } = require("express")
+const { Container } = require("@mui/system")
 const app= express()
 const server = app.listen(8080, ()=> console.log("server up"))
 
@@ -21,10 +22,10 @@ response.send(random());
 
 
 function random(){
-    let allProdu=[]
+    const container= new Contenedor()
     const archivo='./productos.txt';
-    allProdu= contenedor.read(archivo);
-    JSON.parse(allProdu);
+    const allProdu= container.read(archivo);
+    console.log(allProdu);
     const random=Math.floor(Math.random()* allProdu.length);
     console.log(random);
     return allProdu[random];

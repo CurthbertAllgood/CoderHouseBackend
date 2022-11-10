@@ -95,9 +95,10 @@ class Contenedor{
     }
 
     read(archivo){
-        let productos=[]
+        let productos=[];
         productos=fs.readFileSync(archivo, 'utf8');
-        JSON.parse(productos);
+        console.log(productos)
+        productos=JSON.parse(productos);
         return productos;
     }
 
