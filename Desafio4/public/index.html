@@ -7,14 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="productoForm"action="">
-        <label for="">nombre</label>
-        <input type="name">
-        <label for="">apellido</label>
-        <input type="lastname">
-        <label for="">edad</label>
-        <input type="age">
+    <form  action="/api/productos"  method="post" enctype="multipart/form-data">
+        <label for="">titulo</label>
+        <input name="titulo">
+        <label for="">detalle</label>
+        <input name="detalle">
+        <label for="">precio</label>
+        <input name="precio">
         <input type="submit">
+        <label class="file-label">
+        <input class="file-input" type="file" name="photo" />
     </form>
     <script src="app.js"></script>    
 </body>
